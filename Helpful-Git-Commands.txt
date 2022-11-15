@@ -1,0 +1,102 @@
+YOU SHOULD REGULARLY USE git pull TO UPDATE YOUR DIRECTORY FROM THE REMOTE DIRECTORY
+
+
+DO NOT NAME FILES WITH SPACES IN THEM. USE UNDERSCORES INNSTEAD OF SPACES.
+
+
+Get git URL from the command line
+git config --get remote.origin.url
+
+
+THIS AVOIDS LONG COMMIT AND PULL MESSAGES
+esc :wq
+
+
+REMOVE/DELETE FILE
+git rm <filename> <filename2> <etc>
+
+
+REMOVE/DELETE a folder
+git rm -r folder-name
+//update to remote repository
+git commit -m "Remove duplicated directory"
+git push origin master
+
+
+ADD FILE
+git add <filename>
+
+
+RESETTING YOUR CHANGES BACK TO THE MASTER
+git checkout
+
+
+IN CASE YOU MADE CHANGES THAT YOU WANT TO GET RID OF SO YOU CAN DO A CLEAN GIT PULL
+git stash allows you to reset your changes so you can git pull without
+any conflict. Then you can git stash clear to memove your list of stashes
+https://git-scm.com/docs/git-stash
+
+
+MAKING BRANCHES
+git branch - tells what branch you're one
+git branch <newbranchname> - makes a new branch
+git checkout <branchname> - swiches branches to new branch name
+
+
+UPDATE BRANCH FROM MASTER
+http://stackoverflow.com/questions/3876977/update-git-branches-from-master
+update branch from master
+git fetch
+git rebase origin/master
+
+
+MERGE BRANCH WITH MASTER
+http://stackoverflow.com/questions/5601931/best-and-safest-way-to-merge-a-git-branch-into-master
+update master from branch
+git checkout <branchname>
+git status
+
+<<THIS IS JUST A NOTE>>
+<<do this only if there are files you need to add after doing "git status">>
+git add (add whatever files your want to merge with your master)
+git commit -m "place commit message here")
+git push
+<<THIS WAS JUST A NOTE>>
+
+git checkout master
+git pull origin master
+git merge <branchname>
+git push origin master
+
+
+DELETING A BRANCH
+LOCALLY (on your computer)
+git checkout master
+git branch -d <branch_name>
+
+REMOTELY (on the repository) -- you should probably only do this to branches you own by the way
+git push origin --delete <branchname>
+
+
+KEEPING A FORKED REPOSITORY UP TO DATE WITH THE MASTER
+https://gist.github.com/CristinaSolana/1885435
+
+
+Github and Markdown
+https://guides.github.com/features/mastering-markdown/
+https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+
+Working with tags in GitHub
+https://help.github.com/articles/working-with-tags/
+https://git-scm.com/book/en/v2/Git-Basics-Tagging
+https://stackoverflow.com/questions/18216991/create-a-tag-in-a-github-repository
+
+//to make a tag with example version v1.0.0 please change accordingly of course
+git tag -a v1.0.0 -m "message here"
+//to check tags
+git tag
+//to push tags to online repo
+git push --tags
+
